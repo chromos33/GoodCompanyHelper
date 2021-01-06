@@ -1,0 +1,169 @@
+.App {
+  background-color: #494e58;
+  min-height: 100vh;
+  padding:25px;
+}
+.button
+{
+  background:black;
+  color:white;
+  position:relative;
+  height:30px;
+  width:30px;
+  display:inline-block;
+  cursor:pointer;
+}
+.button_big
+{
+  width:auto !important;
+}
+.button svg
+{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translateX(-50%) translateY(-50%) !important;
+}
+.defaultPart
+{
+  font-size:16px;
+  display:block;
+}
+h2
+{
+  margin-bottom:10px;
+}
+.card {
+  padding: 10px;
+  background: black;
+  color:white;
+  display: inline-block;
+  border-radius: 3px;
+  min-width:200px;
+}
+input
+{
+  background:transparent;
+  border:none;
+  border-bottom:1px solid white;
+  color:white;
+}
+select
+{
+  background:transparent;
+  border:1px solid white;
+  color:white;
+}
+.bg_grey
+{
+  background:#494e58;
+}
+.fullWidth
+{
+  width:100%;
+}
+.text-center
+{
+  text-align: center;
+}
+.subpart
+{
+  margin-bottom:5px;
+  padding:3px;
+}
+.half-width
+{
+  width:calc(50% - 5px);
+}
+.subpart input,
+.subpart select{
+  width:calc(50% - 6px);
+}
+.subpart input
+{
+  margin-left:5px;
+}
+.subpart select
+{
+  margin-right:5px;
+}
+.subpart .button{
+  padding-top:5px;
+  margin-top:5px;
+}
+.subpart .button:nth-child(1)
+{
+  margin-right:5px;
+}
+.subpart .button:nth-child(2)
+{
+  margin-left:5px;
+}
+.mb_10
+{
+  margin-bottom:10px;
+}
+.mt_10
+{
+  margin-top:10px;
+}
+.Result
+{
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translateX(-50%) translateY(-50%);
+  z-index: 20;
+  min-width:300px;
+  padding:50px 20px;
+  background:black;
+  color:white;
+  text-align: center;
+}
+.Result span
+{
+  display:block;
+}
+.PartsList
+{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.PartsList > div
+{
+  flex:0 0 calc(25% - 25px);
+  margin-bottom:20px;
+}
+@media (min-width: 576px) {
+  .PartsList > div
+  {
+    flex:0 0 100%;
+    margin-bottom:20px;
+  }
+}
+
+@media (min-width: 768px) { 
+  .PartsList > div
+  {
+    flex:0 0 calc(100% / 3 - 25px);
+    margin-bottom:20px;
+  }
+}
+
+@media (min-width: 992px) { 
+  .PartsList > div
+  {
+    flex:0 0 calc(100% / 4 - 25px);
+    margin-bottom:20px;
+  }
+}
+
+@media (min-width: 1200px) { 
+  .PartsList > div
+  {
+    flex:0 0 calc(100% / 5 - 25px);
+    margin-bottom:20px;
+  }
+}
