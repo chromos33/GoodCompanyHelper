@@ -35,7 +35,6 @@ function App() {
     setPartList(savearray);
   }
   const updateLocalStorage = () => {
-    console.log(PartList);
     var tmp = PartList.map(x => {
       x.PartList = [];
       return x;
@@ -108,8 +107,6 @@ function App() {
       if(pIndex === spIndex)
       {
         var tmpsubarray = part.ManufactureParts.map((manufacturpart,mIndex) => {
-          console.log(index);
-          console.log(mIndex);
           if(index === mIndex)
           {
             manufacturpart.Part = data.SelectedItem;
@@ -183,7 +180,7 @@ function App() {
       ResultArray.push({Name: key,Value:value});
     }
     var ResultRenderContent = ResultArray.map((item,index) => {
-      return <span key={index}>{item.Name}: {Math.ceil(item.Value)} "Desks"</span>;
+      return <span key={index}>{item.Name}: {Math.ceil(item.Value)} "Desks" ({Math.round(item.Value*100)/100})</span>;
     });
     setResultRender(
       <div className="Result">
@@ -226,7 +223,6 @@ function App() {
       if(IsKeyInObject(key,A))
       {
         //Increment by value
-        console.log("Increment");
         A[key] += value;
       }
       else
@@ -242,9 +238,10 @@ function App() {
     if(Part.ManufactureParts.length > 0)
     {
       Part.ManufactureParts.forEach(x => {
+        console.log(x);
         var Speed = GetSpeedFromPartByName(x.Part);
         var ResultAmount = GetResultAmountFromPartByName(x.Part);
-        var DeskCount = CalculateRequiredDeskCount(WantedAmount,Speed,ResultAmount)
+        var DeskCount = CalculateRequiredDeskCount(WantedAmount * x.Amount,Speed,ResultAmount)
         Data = AddDeskDataToObject(Data,x.Part,DeskCount);
         var ManufactureParts = GetManufacturePartsByName(x.Part);
         if(ManufactureParts.length > 0)
